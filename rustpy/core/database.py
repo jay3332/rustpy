@@ -27,7 +27,7 @@ class _Database:
         env_entry = 'BETA_DATABASE_PASSWORD' if platform.system() == 'Windows' else 'DATABASE_PASSWORD'
 
         self._internal_pool = await asyncpg.create_pool(
-            host='127.0.0.1',
+            host='localhost',
             user='postgres',
             database='rustpy',
             password=os.environ[env_entry]
