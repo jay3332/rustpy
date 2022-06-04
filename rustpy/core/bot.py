@@ -65,7 +65,7 @@ class RustPy(commands.Bot):
         self.setup()
 
     async def _get_prefix(self, message: discord.Message) -> str:
-        return commands.when_mentioned_or('.')(self, message)  # Too lazy to make a decent prefix system so here you go
+        return commands.when_mentioned_or(['.', 'rs!', 'rust!', 'rustpy'])(self, message)  # Too lazy to make a decent prefix system so here you go
 
     def load_extensions(self) -> None:
         self.load_extension('jishaku')
